@@ -16,6 +16,7 @@ public class Main {
         } catch (IOException e) {
             System.out.println("Niepoprawna ścieżka pliku lub plik nie został stworzony.");
         }
+        scan.close();
 
     }
 
@@ -27,7 +28,7 @@ public class Main {
         }
     }
 
-    private static Map<String, Country> getFromFile(String s) throws FileNotFoundException {
+    private static void getFromFile(String s) throws FileNotFoundException {
 
         Scanner input = new Scanner(new File(s));
         String line;
@@ -39,6 +40,6 @@ public class Main {
             country = new Country(temp[0], temp[1], Integer.valueOf(temp[2]));
             countryMap.put(temp[0], country);
         }
-        return countryMap;
+        input.close();
     }
 }
