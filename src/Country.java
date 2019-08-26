@@ -1,7 +1,10 @@
+import java.util.Map;
+
 public class Country {
     private String id;
     private String name;
     private int citizens;
+
 
     public Country(String id, String name, int citizens) {
         this.id = id;
